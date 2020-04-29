@@ -19,6 +19,11 @@ public class ConstructionCommercialHotel extends ConstructionCommercial{
         this.floorsQuantity = floorsQuantity;
     }
 
+    public ConstructionCommercialHotel(String address, float squareFeet, float squareFeetPrice, int estimatedConstructionDays, String constructionName, int floorsQuantity) {
+        super(address, squareFeet, squareFeetPrice, estimatedConstructionDays, constructionName);
+        this.floorsQuantity = floorsQuantity;
+    }
+
     public int getFloorsQuantity() {
         return floorsQuantity;
     }

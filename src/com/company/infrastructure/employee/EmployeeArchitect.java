@@ -1,11 +1,18 @@
 package com.company.infrastructure.employee;
 
+import com.company.common.AppParameters;
+
 public class EmployeeArchitect extends Employee {
 
     private String enrolmentNumber;
 
     public EmployeeArchitect(String name, double dni, String phoneNumber, double costDayWork, String enrolmentNumber) {
         super(name, dni, phoneNumber, costDayWork);
+        this.enrolmentNumber = enrolmentNumber;
+    }
+
+    public EmployeeArchitect(String name, double dni, String phoneNumber, String enrolmentNumber) {
+        super(name, dni, phoneNumber, AppParameters.ARCHITECT_COST_DAY_WORK);
         this.enrolmentNumber = enrolmentNumber;
     }
 
@@ -19,9 +26,7 @@ public class EmployeeArchitect extends Employee {
 
     //TODO: ToString method
 
-
-    //TODO: CrearPlanos method
-    public void CrearPlanos(){
-        System.out.println("Crear planos por implementar");
+    public void createDrawings(){
+        System.out.println("I'm creating my next structural drawing");
     }
 }

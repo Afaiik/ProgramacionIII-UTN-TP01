@@ -1,9 +1,14 @@
 package com.company.infrastructure.construction;
 
 import com.company.infrastructure.employee.Employee;
+import com.company.infrastructure.employee.EmployeeArchitect;
+import com.company.infrastructure.employee.EmployeeConstructionBuilder;
+import com.company.infrastructure.employee.EmployeeConstructionMasterBuilder;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 public abstract class Construction {
 
@@ -31,6 +36,15 @@ public abstract class Construction {
         this.estimatedConstructionDays = estimatedConstructionDays;
         this.employees = new ArrayList<Employee>();
         this.employees.add(employee);
+    }
+
+    public Construction(String address, float squareFeet, float squareFeetPrice, int estimatedConstructionDays) {
+        this.id = UUID.randomUUID();
+        this.address = address;
+        this.squareFeet = squareFeet;
+        this.squareFeetPrice = squareFeetPrice;
+        this.estimatedConstructionDays = estimatedConstructionDays;
+        this.employees = new ArrayList<Employee>();
     }
 
     public UUID getId() {
@@ -93,7 +107,27 @@ public abstract class Construction {
                 '}';
     }
 
-    //TODO: CalcularPrecioEstimado
+    //TODO: checkear comportamiento
+    public double getEstimatedConstructionPrice(){
+        float sizeCost = this.squareFeetPrice * this.squareFeet;
+        float employeesCost = (float)(this.employees.stream().mapToDouble(x -> x.costDayWork).sum() * this.estimatedConstructionDays);
 
+        return sizeCost + employeesCost;
+    }
+    
+    public int getArchitectsQuantityInConstruction(){
+        List<Employee> filteredList = this.employees.stream().filter(x -> x instanceof EmployeeArchitect).collect(Collectors.toList());
+        return filteredList.size();
+    }
+
+    public int getMasterBuildersQuantityInConstruction(){
+        List<Employee> filteredList = this.employees.stream().filter(x -> x instanceof EmployeeConstructionMasterBuilder).collect(Collectors.toList());
+        return filteredList.size();
+    }
+
+    public int getBuildersQuantityInConstruction(){
+        List<Employee> filteredList = this.employees.stream().filter(x -> x instanceof EmployeeConstructionBuilder).collect(Collectors.toList());
+        return filteredList.size();
+    }
 
 }

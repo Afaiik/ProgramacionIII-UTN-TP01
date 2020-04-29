@@ -51,4 +51,15 @@ public abstract class Employee {
     }
 
     //TODO: ToString method
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", dni=" + dni +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", costDayWork=" + costDayWork +
+                '}';
+    }
 }

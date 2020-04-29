@@ -18,6 +18,11 @@ public abstract class ConstructionCommercial extends Construction {
         this.constructionName = constructionName;
     }
 
+    public ConstructionCommercial(String address, float squareFeet, float squareFeetPrice, int estimatedConstructionDays, String constructionName) {
+        super(address, squareFeet, squareFeetPrice, estimatedConstructionDays);
+        this.constructionName = constructionName;
+    }
+
     public String getConstructionName() {
         return constructionName;
     }

@@ -18,6 +18,11 @@ public class ConstructionDomestic extends Construction {
         this.roomsQuantity = roomsQuantity;
     }
 
+    public ConstructionDomestic(String address, float squareFeet, float squareFeetPrice, int estimatedConstructionDays, int roomsQuantity) {
+        super(address, squareFeet, squareFeetPrice, estimatedConstructionDays);
+        this.roomsQuantity = roomsQuantity;
+    }
+
     public int getRoomsQuantity() {
         return roomsQuantity;
     }

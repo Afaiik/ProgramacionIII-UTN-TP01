@@ -1,6 +1,8 @@
 package com.company.infrastructure.employee;
 
-public abstract class EmployeeConstruction extends Employee{
+import com.company.interfaces.EmployeeConstructionMandatoryMethods;
+
+public abstract class EmployeeConstruction extends Employee {
     private int age;
 
     public EmployeeConstruction(String name, double dni, String phoneNumber, double costDayWork, int age) {
@@ -18,5 +20,4 @@ public abstract class EmployeeConstruction extends Employee{
 
     //TODO: ToString method
 
-    public abstract void build();
 }

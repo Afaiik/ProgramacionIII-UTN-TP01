@@ -19,6 +19,11 @@ public class ConstructionCommercialBusiness extends ConstructionCommercial{
         this.businessField = businessField;
     }
 
+    public ConstructionCommercialBusiness(String address, float squareFeet, float squareFeetPrice, int estimatedConstructionDays, String constructionName, String businessField) {
+        super(address, squareFeet, squareFeetPrice, estimatedConstructionDays, constructionName);
+        this.businessField = businessField;
+    }
+
     public String getBusinessField() {
         return businessField;
     }
