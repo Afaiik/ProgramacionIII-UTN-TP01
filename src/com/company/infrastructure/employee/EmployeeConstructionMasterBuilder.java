@@ -15,7 +15,7 @@ public class EmployeeConstructionMasterBuilder extends EmployeeConstruction  imp
 
     //TODO: check MasterBuilder build implementation
     @Override
-    public void build() {
-        System.out.println("I'm a Master Builder and i keep everything in order");
+    public String build() {
+        return "I'm a Master Builder and i keep everything in order";
     }
 }

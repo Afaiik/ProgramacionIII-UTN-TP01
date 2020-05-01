@@ -1,9 +1,6 @@
 package com.company.infrastructure.construction;
 
-import com.company.infrastructure.employee.Employee;
-import com.company.infrastructure.employee.EmployeeArchitect;
-import com.company.infrastructure.employee.EmployeeConstructionBuilder;
-import com.company.infrastructure.employee.EmployeeConstructionMasterBuilder;
+import com.company.infrastructure.employee.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -105,6 +102,23 @@ public abstract class Construction {
                 ", estimatedConstructionDays=" + estimatedConstructionDays +
                 ", employees=" + employees +
                 '}';
+    }
+    public String getEmployeesInformation(){
+        String ret = "Employees in \"" + this.getAddress() + "\" Construction";
+        for(Employee item : this.employees){
+            ret += "\n\tEmployee \n" +
+                    "Id_______________: " + item.getId() + "\n" +
+                    "Name_____________: " + item.getName() + "\n" +
+                    "DNI______________: " + item.getDni() + "\n" +
+                    "Phone Number_____: " + item.getPhoneNumber() + "\n" +
+                    "Cost per day_____: " + item.getCostDayWork() + "\n";
+            if(item instanceof EmployeeArchitect){
+                ret += "Enrolment number_: " + ((EmployeeArchitect) item).getEnrolmentNumber() + "\n";
+            }else if (item instanceof EmployeeConstructionMasterBuilder || item instanceof EmployeeConstructionBuilder){
+                ret += "Age______________: " + ((EmployeeConstruction) item).getAge() + "\n";
+            }
+        }
+        return ret;
     }
 
     //TODO: checkear comportamiento

@@ -15,7 +15,7 @@ public class EmployeeConstructionBuilder extends EmployeeConstruction  implement
 
     //TODO: check builder build implementation
     @Override
-    public void build() {
-        System.out.println("I'm a Builder and i build ! (obviously)");
+    public String build() {
+        return "I'm a Builder and i build ! >.>";
     }
 }

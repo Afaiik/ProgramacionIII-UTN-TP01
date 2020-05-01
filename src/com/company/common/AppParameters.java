@@ -19,8 +19,8 @@ public class AppParameters {
     public static final int MAX_MASTER_BUILDER_IN_CONSTRUCTION = 3;
     public static final int MIN_BUILDER_IN_CONSTRUCTION = 2;
     public static final String CONSTRUCTION_REQUIREMENTS_ERROR = "\nERROR: Construction Employees don't meet minimum requirements \n" +
-            "Please provide only " + MAX_ARCHITECTS_IN_CONSTRUCTION + " Architects \n" +
-            "between " + MIN_MASTER_BUILDER_IN_CONSTRUCTION + " and " + MAX_MASTER_BUILDER_IN_CONSTRUCTION + " Master Builders \nand " +
-            "at least " + MIN_BUILDER_IN_CONSTRUCTION + " Builders";
+            "\t\tPlease provide only " + MAX_ARCHITECTS_IN_CONSTRUCTION + " Architects \n" +
+            "\t\tbetween " + MIN_MASTER_BUILDER_IN_CONSTRUCTION + " and " + MAX_MASTER_BUILDER_IN_CONSTRUCTION + " Master Builders \n" +
+            "\t\tand at least " + MIN_BUILDER_IN_CONSTRUCTION + " Builders";
 
 }

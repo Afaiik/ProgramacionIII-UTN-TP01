@@ -26,7 +26,7 @@ public class EmployeeArchitect extends Employee {
 
     //TODO: ToString method
 
-    public void createDrawings(){
-        System.out.println("I'm creating my next structural drawing");
+    public String createDrawings(){
+        return "I'm creating my next structural drawing";
     }
 }

@@ -18,6 +18,10 @@ public abstract class Employee {
         this.costDayWork = costDayWork;
     }
 
+    public UUID getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
